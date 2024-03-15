@@ -1,9 +1,27 @@
-const Option = () => {
+const Option = ({ handleResponse }) => {
   return (
     <div>
-      <button>😃 Good</button>
-      <button>😐 Neutral</button>
-      <button>😒 Bad</button>
+      <button
+        onClick={() => {
+          handleResponse('good')
+        }}
+      >
+        😃 Good
+      </button>
+      <button
+        onClick={() => {
+          handleResponse('neutral')
+        }}
+      >
+        😐 Neutral
+      </button>
+      <button
+        onClick={() => {
+          handleResponse('bad')
+        }}
+      >
+        😒 Bad
+      </button>
     </div>
   )
 }
