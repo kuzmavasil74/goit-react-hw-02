@@ -1,4 +1,4 @@
-const Option = ({ updateFeedback }) => {
+const Option = ({ updateFeedback, resetFeedback, visibleReset }) => {
   return (
     <div>
       <button
@@ -22,6 +22,7 @@ const Option = ({ updateFeedback }) => {
       >
         😒 Bad
       </button>
+      {visibleReset && <button onClick={resetFeedback}>🎚️ Reset</button>}
     </div>
   )
 }

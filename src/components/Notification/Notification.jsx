@@ -1,5 +1,5 @@
 const Notification = () => {
-  return <></>
+  return <>No feedback yet</>
 }
 
 export default Notification

@@ -17,11 +17,18 @@ function App() {
     setFeedback({ ...feedback, [feedbackType]: feedback[feedbackType] + 1 })
   }
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad
-
+  const visibleReset = totalFeedback > 0
+  const resetFeedback = () => {
+    setFeedback(initialFeedback)
+  }
   return (
     <>
       <Description />
-      <Option updateFeedback={updateFeedback} />
+      <Option
+        visibleReset={visibleReset}
+        updateFeedback={updateFeedback}
+        resetFeedback={resetFeedback}
+      />
       {totalFeedback === 0 ? (
         <Notification />
       ) : (
