@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Description from './components/Description/Description'
 import Feedback from './components/Feedback/Feedback'
 import Option from './components/Option/Option'
@@ -11,7 +11,11 @@ const initialFeedback = {
 }
 
 function App() {
-  const [feedback, setFeedback] = useState(initialFeedback)
+  const [feedback, setFeedback] = useState(() => {
+    const stringifiedFeedback = localStorage.getItem('feedbackValues')
+    const parsedFeedback = JSON.parse(stringifiedFeedback) ?? initialFeedback
+    return parsedFeedback
+  })
 
   const updateFeedback = (feedbackType) => {
     setFeedback({ ...feedback, [feedbackType]: feedback[feedbackType] + 1 })
@@ -24,6 +28,10 @@ function App() {
   const resetFeedback = () => {
     setFeedback(initialFeedback)
   }
+
+  useEffect(() => {
+    localStorage.setItem('feedbackValues', JSON.stringify(feedback))
+  }, [feedback])
   return (
     <>
       <Description />
