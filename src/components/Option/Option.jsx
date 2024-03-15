@@ -4,6 +4,7 @@ const Option = ({ updateFeedback, resetFeedback, visibleReset }) => {
   return (
     <div className={css.optionButtonDiv}>
       <button
+        className={css.optionButton}
         onClick={() => {
           updateFeedback('good')
         }}
@@ -11,6 +12,7 @@ const Option = ({ updateFeedback, resetFeedback, visibleReset }) => {
         😃 Good
       </button>
       <button
+        className={css.optionButton}
         onClick={() => {
           updateFeedback('neutral')
         }}
@@ -18,13 +20,18 @@ const Option = ({ updateFeedback, resetFeedback, visibleReset }) => {
         😐 Neutral
       </button>
       <button
+        className={css.optionButton}
         onClick={() => {
           updateFeedback('bad')
         }}
       >
         😒 Bad
       </button>
-      {visibleReset && <button onClick={resetFeedback}>🎚️ Reset</button>}
+      {visibleReset && (
+        <button className={css.optionButton} onClick={resetFeedback}>
+          🎚️ Reset
+        </button>
+      )}
     </div>
   )
 }
