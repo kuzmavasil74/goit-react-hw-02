@@ -5,6 +5,7 @@
   margin-bottom: 10px;
 }
 .optionButton {
+  height: 50px;
   border-radius: 5px;
   border: 1.5px solid rgb(66, 64, 64);
 }
