@@ -1,23 +1,23 @@
-const Option = ({ handleResponse }) => {
+const Option = ({ updateFeedback }) => {
   return (
     <div>
       <button
         onClick={() => {
-          handleResponse('good')
+          updateFeedback('good')
         }}
       >
         😃 Good
       </button>
       <button
         onClick={() => {
-          handleResponse('neutral')
+          updateFeedback('neutral')
         }}
       >
         😐 Neutral
       </button>
       <button
         onClick={() => {
-          handleResponse('bad')
+          updateFeedback('bad')
         }}
       >
         😒 Bad
