@@ -4,3 +4,15 @@
   justify-content: left;
   gap: 5px;
 }
+.feedbackList :first-child {
+  color: green;
+}
+.feedbackList :nth-child(2) {
+  color: grey;
+}
+.feedbackList :nth-child(4) {
+  color: orange;
+}
+.feedbackList :last-child {
+  color: rgb(51, 0, 128);
+}

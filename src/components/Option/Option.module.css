@@ -1,5 +1,6 @@
 .optionButtonDiv {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
   margin-bottom: 10px;
 }
