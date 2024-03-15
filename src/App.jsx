@@ -17,6 +17,9 @@ function App() {
     setFeedback({ ...feedback, [feedbackType]: feedback[feedbackType] + 1 })
   }
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad
+  const positiveFeedback = Math.round(
+    ((feedback.good + feedback.neutral) / totalFeedback) * 100
+  )
   const visibleReset = totalFeedback > 0
   const resetFeedback = () => {
     setFeedback(initialFeedback)
@@ -32,7 +35,11 @@ function App() {
       {totalFeedback === 0 ? (
         <Notification />
       ) : (
-        <Feedback feedback={feedback} />
+        <Feedback
+          feedback={feedback}
+          totalFeedback={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
       )}
     </>
   )
