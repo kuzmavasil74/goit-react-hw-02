@@ -9,7 +9,7 @@ const Option = ({ updateFeedback, resetFeedback, visibleReset }) => {
           updateFeedback('good')
         }}
       >
-        😃 Good
+        😊 Good
       </button>
       <button
         className={css.optionButton}
@@ -25,7 +25,7 @@ const Option = ({ updateFeedback, resetFeedback, visibleReset }) => {
           updateFeedback('bad')
         }}
       >
-        😒 Bad
+        👎 Bad
       </button>
       {visibleReset && (
         <button className={css.optionButton} onClick={resetFeedback}>
