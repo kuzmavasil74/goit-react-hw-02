@@ -20,7 +20,9 @@ function App() {
   const updateFeedback = (feedbackType) => {
     setFeedback({ ...feedback, [feedbackType]: feedback[feedbackType] + 1 })
   }
-  const totalFeedback = feedback.good + feedback.neutral + feedback.bad
+  const totalFeedback = Object.values(feedback).reduce((acc, rcc) => {
+    return acc + rcc
+  }, 0)
   const positiveFeedback = Math.round(
     ((feedback.good + feedback.neutral) / totalFeedback) * 100
   )
